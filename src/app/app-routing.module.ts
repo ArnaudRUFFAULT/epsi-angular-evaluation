@@ -1,6 +1,5 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from '@angular/router';
-import { TestComponent } from "./test/test.component";
 import { QuizComponent } from "./quiz/quiz.component";
 import { ScoreComponent } from "./score/score.component";
 
