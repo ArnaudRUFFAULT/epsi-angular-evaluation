@@ -14,6 +14,7 @@ import { QuizComponent } from './quiz/quiz.component';
 import { ScoreComponent } from './score/score.component';
 import { TimerComponent } from './timer/timer.component';
 import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {MatButtonModule} from '@angular/material/button';
     MatIconModule,
     FormsModule,
     HttpClientModule,
-    MatButtonModule
+    MatButtonModule,
+    MatInputModule
   
   ],
   providers: [],

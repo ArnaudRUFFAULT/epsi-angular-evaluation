@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Question } from '../question';
 import { QuizService } from '../quiz.service';
 
@@ -15,24 +15,30 @@ export class QuizComponent implements OnInit {
   answer: string;
   found: boolean;
   hasNext = true;
+  @Input()
+  nbQuestions;
 
   constructor(private quizService: QuizService) { }
 
   ngOnInit() {
-    this.quizService.buildNewQuiz(10).subscribe(
-      questions => this.questions = questions,
-      error => console.log(error)
-    )
+    this.nbQuestions = 10;
+    this.getQuestions();
     this.found = undefined;
     this.iQuestion = 0;
     this.hasNext == true;
     this.quizService.score = 0;
   }
 
+  getQuestions(){
+    this.quizService.buildNewQuiz(this.nbQuestions).subscribe(
+      questions => this.questions = questions,
+      error => console.log(error)
+    )
+  }
+
   newGame() {
     this.currentQuestion = this.questions[this.iQuestion];
     this.iQuestion++;
-
     if (this.questions.length == this.iQuestion) {
       this.hasNext = false;
     }

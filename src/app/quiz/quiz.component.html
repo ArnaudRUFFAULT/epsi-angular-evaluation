@@ -1,9 +1,14 @@
 <div class="container">
   <div *ngIf="!currentQuestion" class="example-button-row">
-    <button mat-raised-button color="accent" (click)="newGame()" class="start-button">Nouvelle partie</button>
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Nombre de questions" [(ngModel)]="nbQuestions" (change)="getQuestions()">
+    </mat-form-field>
+
+    <button *ngIf="questions" mat-raised-button color="accent" (click)="newGame()" class="start-button">Nouvelle partie</button>
   </div>
-  <div *ngIf="currentQuestion && !answer" class="example-button-row"> 
-    <app-timer (timeOver)="timeSpent()"></app-timer> 
+  <div *ngIf="currentQuestion && !answer" class="example-button-row">
+    <app-timer (timeOver)="timeSpent()"></app-timer>
     <p>Quelle est la capitale du pays : {{currentQuestion.pays}} ?</p>
     <div class="answers-container"></div>
     <div *ngFor="let proposition of currentQuestion.propositions" (click)="answerGiven(proposition)" class="answer-container">
