@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "eval": {
+    "tp-quiz": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/eval",
+            "outputPath": "dist/tp-quiz",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -58,18 +58,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "eval:build"
+            "browserTarget": "tp-quiz:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "eval:build:production"
+              "browserTarget": "tp-quiz:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "eval:build"
+            "browserTarget": "tp-quiz:build"
           }
         },
         "test": {
@@ -104,7 +104,7 @@
         }
       }
     },
-    "eval-e2e": {
+    "tp-quiz-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -113,11 +113,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "eval:serve"
+            "devServerTarget": "tp-quiz:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "eval:serve:production"
+              "devServerTarget": "tp-quizz:serve:production"
             }
           }
         },
@@ -133,5 +133,5 @@
       }
     }
   },
-  "defaultProject": "eval"
+  "defaultProject": "tp-quiz"
 }

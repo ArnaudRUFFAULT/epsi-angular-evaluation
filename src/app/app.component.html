@@ -1,6 +1,6 @@
 <mat-toolbar color="primary">
     <mat-toolbar-row>
-        <span>Evaluation</span>
+        <span>Géo quiz</span>
         <span class="example-spacer"></span>
         <button mat-icon-button [matMenuTriggerFor]="menu">
             <mat-icon>more_vert</mat-icon>
@@ -9,6 +9,10 @@
             <button mat-menu-item (click)="redirectHome()">
                 <mat-icon>home</mat-icon>
                 <span>Acceuil</span>
+            </button>
+            <button mat-menu-item (click)="redirectQuiz()">
+                <mat-icon>fast_forward</mat-icon>
+                <span>Jouer</span>
             </button>
         </mat-menu>
     </mat-toolbar-row>

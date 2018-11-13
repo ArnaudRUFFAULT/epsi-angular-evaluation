@@ -1,0 +1,13 @@
+.container {
+    padding-top : 200px;
+    margin : auto;
+    text-align: center
+}
+
+.start-button {
+    height : 50px;
+}
+
+.answer-container button {
+    margin-top : 20px;
+}

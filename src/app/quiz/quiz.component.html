@@ -1,0 +1,19 @@
+<div class="container">
+  <div *ngIf="!currentQuestion" class="example-button-row">
+    <button mat-raised-button color="accent" (click)="newGame()" class="start-button">Nouvelle partie</button>
+  </div>
+  <div *ngIf="currentQuestion && !answer" class="example-button-row"> 
+    <app-timer (timeOver)="timeSpent()"></app-timer> 
+    <p>Quelle est la capitale du pays : {{currentQuestion.pays}} ?</p>
+    <div class="answers-container"></div>
+    <div *ngFor="let proposition of currentQuestion.propositions" (click)="answerGiven(proposition)" class="answer-container">
+      <button mat-raised-button color="primary">{{ proposition }}</button>
+    </div>
+  </div>
+  <p *ngIf="found === true">Bien joué</p>
+  <p *ngIf="found === false">{{ showAnswer() }}</p>
+  <p *ngIf="found != undefined && hasNext"><button mat-raised-button color="accent" (click)="loadNextQuestion()">Prochaine
+      question</button></p>
+  <p *ngIf="found != undefined && !hasNext"><button mat-raised-button color="accent" routerLink="/quiz/score">Voir
+      mon score</button></p>
+</div>

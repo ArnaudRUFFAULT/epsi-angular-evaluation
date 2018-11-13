@@ -8,11 +8,20 @@ import { TestComponent } from './test/test.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
+import { FormsModule  } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { QuizComponent } from './quiz/quiz.component';
+import { ScoreComponent } from './score/score.component';
+import { TimerComponent } from './timer/timer.component';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestComponent
+    TestComponent,
+    QuizComponent,
+    ScoreComponent,
+    TimerComponent
   ],
   imports: [
     BrowserModule,
@@ -20,8 +29,11 @@ import {MatIconModule} from '@angular/material/icon';
     AppRoutingModule,
     MatToolbarModule,
     MatMenuModule,
-    MatIconModule
-    
+    MatIconModule,
+    FormsModule,
+    HttpClientModule,
+    MatButtonModule
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -12,7 +12,11 @@ export class AppComponent {
 
   }
 
-  redirectHome(){
+  redirectHome() {
     this.router.navigate(['']);
+  }
+
+  redirectQuiz() {
+    this.router.navigate(['/quiz']);
   }
 }
