@@ -29,11 +29,14 @@ export class QuizComponent implements OnInit {
     this.quizService.score = 0;
   }
 
-  getQuestions(){
-    this.quizService.buildNewQuiz(this.nbQuestions).subscribe(
-      questions => this.questions = questions,
-      error => console.log(error)
-    )
+  getQuestions() {
+    if (this.nbQuestions > 0 && this.nbQuestions < 21) {
+      this.quizService.buildNewQuiz(this.nbQuestions).subscribe(
+        questions => this.questions = questions,
+        error => console.log(error)
+      )
+    }
+
   }
 
   newGame() {
@@ -63,13 +66,13 @@ export class QuizComponent implements OnInit {
 
   answerGiven(answer: string) {
     this.answer = answer;
-    if(this.answer == this.currentQuestion.capitale){
+    if (this.answer == this.currentQuestion.capitale) {
       this.found = true;
       this.quizService.score++
     } else {
       this.found = false;
     }
-    
+
   }
   showAnswer() {
     return "Dommage! la réponse était " + this.currentQuestion.capitale + " !";
